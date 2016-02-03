@@ -70,4 +70,6 @@ SOFTWARE.
 
 ## Author
 
-[yedo-factory](http://yedo-factory.co.jp/)
+**yedo-factory**  
+http://yedo-factory.co.jp/  
+https://github.com/orgs/yedofactory
