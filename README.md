@@ -5,11 +5,12 @@
 SocialWorkerは、iOS/AndroidでのTwitter、Facebook、Line、Instagram、メールへの連携を簡単に行うことが出来るUnityAssetです。  
 詳しくは以下をご確認下さい。  
   
-[Japanese](http://qiita.com/yedo/items/7e76dbf58bab34042bc1)/[English](http://qiita.com/yedo/items/c53beabcc6e75a64ed2a)
-
-**ヱドファクトリー Unity Asset**  
-[MVVM 4 uGUI](http://qiita.com/yedo/items/50028c0aa8515800ace0)   ： uGUI＋MVVM  
-[SocialWorker](http://qiita.com/yedo/items/7e76dbf58bab34042bc1)  ： SNSへ簡単連携  
+[Japanese](http://qiita.com/yedo/items/7e76dbf58bab34042bc1)/[English](http://qiita.com/yedo/items/c53beabcc6e75a64ed2a)  
+  
+  
+**◆ヱドファクトリー Unity Asset◆**  
+[MVVM 4 uGUI](http://qiita.com/yedo/items/50028c0aa8515800ace0)　 ： uGUI＋MVVM  
+[SocialWorker](http://qiita.com/yedo/items/7e76dbf58bab34042bc1)　： SNSへ簡単連携  
 [LitJson Ruler](http://qiita.com/yedo/items/932fbf558e1d2c63e36a) ： LitJsonのサポートツール  
 
 ## Description
