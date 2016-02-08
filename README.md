@@ -8,9 +8,9 @@ SocialWorkerは、iOS/AndroidでのTwitter、Facebook、Line、Instagram、メ�
 [Japanese](http://qiita.com/yedo/items/7e76dbf58bab34042bc1)/[English](http://qiita.com/yedo/items/c53beabcc6e75a64ed2a)
 
 **ヱドファクトリー Unity Asset**  
-<INS>[MVVM 4 uGUI](http://qiita.com/yedo/items/50028c0aa8515800ace0)</INS> ： uGUI＋MVVM  
-<INS>[SocialWorker](http://qiita.com/yedo/items/7e76dbf58bab34042bc1)</INS> ： SNSへ簡単連携  
-<INS>[LitJson Ruler](http://qiita.com/yedo/items/932fbf558e1d2c63e36a)</INS> ： LitJsonのサポートツール  
+[MVVM 4 uGUI](http://qiita.com/yedo/items/50028c0aa8515800ace0)   ： uGUI＋MVVM  
+[SocialWorker](http://qiita.com/yedo/items/7e76dbf58bab34042bc1)  ： SNSへ簡単連携  
+[LitJson Ruler](http://qiita.com/yedo/items/932fbf558e1d2c63e36a) ： LitJsonのサポートツール  
 
 ## Description
 
