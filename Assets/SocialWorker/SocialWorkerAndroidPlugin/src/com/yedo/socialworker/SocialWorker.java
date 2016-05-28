@@ -48,7 +48,7 @@ public class SocialWorker {
 	 */
 	public void postTwitterOrFacebook(boolean isTwitter, String message, String url, String imagePath) {
 		try {
-			String name = (isTwitter) ? "com.twitter.android" : "com.facebook.katana";
+			String name = (isTwitter) ? "com.twitter" : "com.facebook";
 			String type = (imagePath.equals("")) ? "text/plain" : getIntentTypeForImage(imagePath);
 			Intent intent = createAppIntent(name, Intent.ACTION_SEND, type);
     		if(intent != null) {
@@ -74,7 +74,7 @@ public class SocialWorker {
 	 */
 	public void postLine(String message, String imagePath) {
 		try {
-			Intent intent = createAppIntent("jp.naver.line.android", Intent.ACTION_SEND, "text/plain");
+			Intent intent = createAppIntent("jp.naver.line", Intent.ACTION_SEND, "text/plain");
 			if(intent != null) {
     			if(imagePath.equals("")) {
     				intent = new Intent(Intent.ACTION_VIEW, Uri.parse("line://msg/text/" + URLEncoder.encode(message, "UTF-8")));
@@ -98,7 +98,7 @@ public class SocialWorker {
      */
     public void postInstagram(String imagePath) {
     	try {
-    		Intent intent = createAppIntent("com.instagram.android", Intent.ACTION_SEND, getIntentTypeForImage(imagePath));
+    		Intent intent = createAppIntent("com.instagram", Intent.ACTION_SEND, getIntentTypeForImage(imagePath));
 			if(intent != null) {
 				intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(imagePath)));
 				UnityPlayer.currentActivity.startActivity(intent);

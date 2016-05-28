@@ -1,7 +1,7 @@
 //----------------------------------------------
 // SocialWorker
 // © 2015 yedo-factory
-// Version 1.0.0
+// Version 1.0.2
 //----------------------------------------------
 SocialWorkerはTwitter、Facebook、Line、Instagram、メールへの連携を簡単に行うことが出来るAssetである!
 ※OAuth認証の仕組みは行っていない
@@ -29,6 +29,9 @@ SocialWorkerはTwitter、Facebook、Line、Instagram、メールへの連携を�
 (2)Scriptから[SocialWorker.PostTwitter][SocialWorker.PostFacebook][SocialWorker.PostLine][SocialWorker.PostInstagram][SocialWorker.PostMail][SocialWorker.CreateChooser]を呼ぶ
 
 ■バージョン履歴
+
+1.0.2
+- mod : Facebookのintent投稿が失敗するバグを修正
 
 1.0.1
 - add : [Editor/SocialWorkerPostProcessBuild]追加。iOS9でカスタムURLスキームがinfo.plistに記載されていない場合にエラーになる問題の対応。
