@@ -6,12 +6,6 @@ SocialWorkerは、iOS/AndroidでのTwitter、Facebook、Line、Instagram、メ�
 詳しくは以下をご確認下さい。  
   
 [Japanese](http://qiita.com/yedo/items/7e76dbf58bab34042bc1)/[English](http://qiita.com/yedo/items/c53beabcc6e75a64ed2a)  
-  
-  
-**◆ヱドファクトリー Unity Asset◆**  
-[MVVM 4 uGUI](http://qiita.com/yedo/items/50028c0aa8515800ace0) ： uGUI＋MVVM  
-[SocialWorker](http://qiita.com/yedo/items/7e76dbf58bab34042bc1) ： SNSへ簡単連携  
-[LitJson Ruler](http://qiita.com/yedo/items/932fbf558e1d2c63e36a) ： LitJsonのサポートツール  
 
 ## Description
 
@@ -50,32 +44,7 @@ Android 2.3+
 
 本プロジェクトをUnity上にそのままインポートするか、トップ階層にある SocialWorker.unitypackage をご使用下さい。
 
-## Licence
-
-The MIT License (MIT)  
-  
-Copyright (c) 2015 yedo-factory  
-  
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:  
-  
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.  
-  
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
 ## Author
 
-**yedo-factory**  
 http://yedo-factory.co.jp/  
-https://github.com/orgs/yedofactory
+http://okamura0510.jp/
