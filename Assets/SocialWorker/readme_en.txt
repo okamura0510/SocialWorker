@@ -1,7 +1,7 @@
 //----------------------------------------------
 // SocialWorker
 // © 2015 yedo-factory
-// Version 1.0.2
+// Version 1.0.3
 //----------------------------------------------
 SocialWorker is Asset which can post Twitter, Facebook, Line, Instagram and Mail easily!
 ※OAuth authentication isn't being used.
@@ -29,6 +29,9 @@ Post of message and image is supported.
 (2)[SocialWorker.PostTwitter][SocialWorker.PostFacebook][SocialWorker.PostLine][SocialWorker.PostInstagram][SocialWorker.PostMail][SocialWorker.CreateChooser] is called.
 
 ■Version History
+
+1.0.3
+- mod : Intent is corrected in acquisition by packageName in Android.
 
 1.0.2
 - mod : Modify facebook intent post error. 
