@@ -30,6 +30,12 @@ Post of message and image is supported.
 
 ■Version History
 
+1.0.4
+- mod : SocialWorkerPostProcessBuild, use UnityEditor.iOS.Xcode.
+- mod : SocialWorker.mm, add MessageUI.framework and Social.framework. (Plugin Inspector)
+- mod : Unity support version upgrade 5.5.0+.
+- add : meta
+
 1.0.3
 - mod : Intent is corrected in acquisition by packageName in Android.
 

@@ -4,7 +4,6 @@
 //----------------------------------------------
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 using System.IO;
 
 namespace SWorker
@@ -12,10 +11,10 @@ namespace SWorker
     /// <summary>
     /// デモシーン
     /// </summary>
-	public class SceneDemo : MonoBehaviour
+	public class Demo : MonoBehaviour
 	{
-		private static readonly string ExtensionImage = ".png";
-//		private static readonly string ExtensionImage = ".jpeg";
+		static readonly string ExtensionImage = ".png";
+//		static readonly string ExtensionImage = ".jpeg";
 
 		public Text Result;
 		public RawImage Image;
@@ -26,11 +25,11 @@ namespace SWorker
         void Start()
         {
             // Post画像は端末から読み込むので、ない場合はあらかじめ保存しておくこと
-			string imagePath = Application.persistentDataPath + "/image" + ExtensionImage;
+			var imagePath = Application.persistentDataPath + "/image" + ExtensionImage;
             if (!File.Exists(imagePath)) 
             {
-				Texture2D texture = (Texture2D)Image.texture;
-				byte[] data = (ExtensionImage == ".png") ? texture.EncodeToPNG () : texture.EncodeToJPG ();
+				var texture = (Texture2D)Image.texture;
+				var data    = (ExtensionImage == ".png") ? texture.EncodeToPNG () : texture.EncodeToJPG ();
 				File.WriteAllBytes(imagePath, data); 
             }
         }
@@ -40,9 +39,9 @@ namespace SWorker
         /// </summary>
         public void OnPostTwitter()
         {
-			string message   = "message";
-			string url       = "http://yedo-factory.co.jp/";
-			string imagePath = Application.persistentDataPath + "/image" + ExtensionImage;
+			var message   = "message";
+			var url       = "http://yedo-factory.co.jp/";
+			var imagePath = Application.persistentDataPath + "/image" + ExtensionImage;
 			SocialWorker.PostTwitter(message, url, imagePath, OnResult);
 //			SocialWorker.PostTwitter(message, "", OnResult);
 //			SocialWorker.PostTwitter("", imagePath, OnResult);
@@ -53,7 +52,7 @@ namespace SWorker
         /// </summary>
         public void OnPostFacebook()
         {
-			string imagePath = Application.persistentDataPath + "/image" + ExtensionImage;
+			var imagePath = Application.persistentDataPath + "/image" + ExtensionImage;
 			SocialWorker.PostFacebook(imagePath, OnResult);
         }
 
@@ -62,8 +61,8 @@ namespace SWorker
         /// </summary>
         public void OnPostLine()
         {
-			string message   = "message";
-			string imagePath = Application.persistentDataPath + "/image" + ExtensionImage;
+			var message   = "message";
+			var imagePath = Application.persistentDataPath + "/image" + ExtensionImage;
 			SocialWorker.PostLine(message, imagePath, OnResult);
 //			SocialWorker.PostLine(message, "", OnResult);
 //			SocialWorker.PostLine("", imagePath, OnResult);
@@ -74,7 +73,7 @@ namespace SWorker
         /// </summary>
         public void OnPostInstagram()
         {
-			string imagePath = Application.persistentDataPath + "/image" + ExtensionImage;
+			var imagePath = Application.persistentDataPath + "/image" + ExtensionImage;
 			SocialWorker.PostInstagram(imagePath, OnResult);
         }
 
@@ -83,12 +82,12 @@ namespace SWorker
         /// </summary>
         public void OnPostMail()
         {
-			string[] to      = new string[] { "to@hoge.com" };
-			string[] cc      = new string[] { "cc@hoge.com" };
-			string[] bcc     = new string[] { "bcc@hoge.com" };
-			string subject   = "subject";
-			string message   = "message";
-			string imagePath = Application.persistentDataPath + "/image" + ExtensionImage;
+			var to        = new string[] { "to@hoge.com" };
+			var cc        = new string[] { "cc@hoge.com" };
+			var bcc       = new string[] { "bcc@hoge.com" };
+			var subject   = "subject";
+			var message   = "message";
+			var imagePath = Application.persistentDataPath + "/image" + ExtensionImage;
 			SocialWorker.PostMail(to, cc, bcc, subject, message, imagePath, OnResult);
 //			SocialWorker.PostMail(message, "", OnResult);
 //			SocialWorker.PostMail("", imagePath, OnResult);
@@ -99,8 +98,8 @@ namespace SWorker
         /// </summary>
         public void OnCreateChooser()
         {
-			string message   = "message";
-			string imagePath = Application.persistentDataPath + "/image" + ExtensionImage;
+			var message   = "message";
+			var imagePath = Application.persistentDataPath + "/image" + ExtensionImage;
 			SocialWorker.CreateChooser(message, imagePath, OnResult);
 //			SocialWorker.CreateChooser(message, "", OnResult);
 //			SocialWorker.CreateChooser("", imagePath, OnResult);
