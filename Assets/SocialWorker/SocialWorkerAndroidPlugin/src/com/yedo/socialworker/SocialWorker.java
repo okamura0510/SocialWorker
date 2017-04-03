@@ -46,7 +46,7 @@ public class SocialWorker {
 	 * @param url URL。空文字の場合は処理されない。
 	 * @param imagePath 画像パス(PNG/JPGのみ)。空文字の場合は処理されない。
 	 */
-	public void postTwitterOrFacebook(boolean isTwitter, String message, String url, String imagePath) {
+	public static void postTwitterOrFacebook(boolean isTwitter, String message, String url, String imagePath) {
 		try {
 			String name = (isTwitter) ? "com.twitter.android" : "com.facebook.katana";
 			String type = (imagePath.equals("")) ? "text/plain" : getIntentTypeForImage(imagePath);
@@ -72,7 +72,7 @@ public class SocialWorker {
 	 * @param message メッセージ
 	 * @param imagePath 画像パス(PNG/JPGのみ)。空文字の場合は処理されない。
 	 */
-	public void postLine(String message, String imagePath) {
+	public static void postLine(String message, String imagePath) {
 		try {
 			Intent intent = createAppIntent("jp.naver.line.android", Intent.ACTION_SEND, "text/plain");
 			if(intent != null) {
@@ -96,7 +96,7 @@ public class SocialWorker {
      * Instagram投稿。Instagramは画像の投稿のみ行える。
      * @param imagePath 画像パス(PNG/JPGのみ)
      */
-    public void postInstagram(String imagePath) {
+    public static void postInstagram(String imagePath) {
     	try {
     		Intent intent = createAppIntent("com.instagram.android", Intent.ACTION_SEND, getIntentTypeForImage(imagePath));
 			if(intent != null) {
@@ -121,7 +121,7 @@ public class SocialWorker {
      * @param message メッセージ
      * @param imagePath 画像パス(PNG/JPGのみ)。空文字の場合は処理されない。
      */
-    public void postMail(String to, String cc, String bcc, String subject, String message, String imagePath) {
+    public static void postMail(String to, String cc, String bcc, String subject, String message, String imagePath) {
     	try {
     		Intent intent = createAppIntent(null, Intent.ACTION_SEND, "message/rfc822");
     		if(intent != null) {
@@ -149,7 +149,7 @@ public class SocialWorker {
      * @param message メッセージ
      * @param imagePath 画像パス(PNG/JPGのみ)。空文字の場合は処理されない。
      */
-    public void createChooser(String message, String imagePath) {
+    public static void createChooser(String message, String imagePath) {
     	try {
     		String type = (imagePath.equals("")) ? "text/plain" : getIntentTypeForImage(imagePath);
     		Intent intent = createAppIntent(null, Intent.ACTION_SEND, type);
@@ -174,7 +174,7 @@ public class SocialWorker {
 	 * @param imagePath 画像パス(PNG/JPGのみ)
 	 * @return Intentタイプ
 	 */
-	private String getIntentTypeForImage(String imagePath) {
+	private static String getIntentTypeForImage(String imagePath) {
 		String extension = imagePath.substring(imagePath.lastIndexOf(".") + 1).toLowerCase(Locale.getDefault()) ;
 		return (extension == ".png") ? "image/png" : "image/jpg";
 	}
@@ -186,7 +186,7 @@ public class SocialWorker {
 	 * @param type Intentタイプ
 	 * @return Intent。アプリがない場合は null
 	 */
-	private Intent createAppIntent(String name, String action, String type) throws Exception {
+	private static Intent createAppIntent(String name, String action, String type) throws Exception {
 		try {
 			Intent intent = new Intent(action);
 	        intent.setType(type);

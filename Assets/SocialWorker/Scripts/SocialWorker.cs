@@ -28,7 +28,7 @@ namespace SWorker
         [DllImport("__Internal")]
         private static extern void createChooser(string message, string imagePath);
 #elif UNITY_ANDROID
-        private static AndroidJavaObject worker = null;
+        private static readonly string NATIVE_CLASS_NAME = "com.yedo.socialworker.SocialWorker";
 #endif
 
         /// <summary>
@@ -42,9 +42,6 @@ namespace SWorker
         void Awake()
         {
             DontDestroyOnLoad(gameObject);
-#if !UNITY_EDITOR && UNITY_ANDROID
-            worker = new AndroidJavaObject("com.yedo.socialworker.SocialWorker");
-#endif
         }
 
         /// <summary>
@@ -74,7 +71,9 @@ namespace SWorker
 #if UNITY_IPHONE
             postTwitterOrFacebook(true, message, url, imagePath);
 #elif UNITY_ANDROID
-            worker.Call("postTwitterOrFacebook", true, message, url, imagePath);
+            using (var nativeClass = new AndroidJavaClass(NATIVE_CLASS_NAME)) {
+                nativeClass.CallStatic("postTwitterOrFacebook", true, message, url, imagePath);
+            }
 #endif
         }
 
@@ -90,7 +89,9 @@ namespace SWorker
 #if UNITY_IPHONE
 			postTwitterOrFacebook(false, "", "", imagePath);
 #elif UNITY_ANDROID
-			worker.Call("postTwitterOrFacebook", false, "", "", imagePath);
+            using (var nativeClass = new AndroidJavaClass(NATIVE_CLASS_NAME)) {
+                nativeClass.CallStatic("postTwitterOrFacebook", false, "", "", imagePath);
+            }
 #endif
         }
 
@@ -108,7 +109,9 @@ namespace SWorker
 #if UNITY_IPHONE
 			postLine(message, imagePath);
 #elif UNITY_ANDROID
-			worker.Call("postLine", message, imagePath);
+            using (var nativeClass = new AndroidJavaClass(NATIVE_CLASS_NAME)) {
+                nativeClass.CallStatic("postLine", message, imagePath);
+            }
 #endif
         }
 
@@ -124,7 +127,9 @@ namespace SWorker
 #if UNITY_IPHONE
             postInstagram(imagePath);
 #elif UNITY_ANDROID
-            worker.Call("postInstagram", imagePath);
+            using (var nativeClass = new AndroidJavaClass(NATIVE_CLASS_NAME)) {
+                nativeClass.CallStatic("postInstagram", imagePath);
+            }
 #endif
         }
 
@@ -161,7 +166,9 @@ namespace SWorker
 #if UNITY_IPHONE
             postMail(string.Join(",", to), string.Join(",", cc), string.Join(",", bcc), subject, message, imagePath);
 #elif UNITY_ANDROID
-            worker.Call("postMail", string.Join(",", to), string.Join(",", cc), string.Join(",", bcc), subject, message, imagePath);
+            using (var nativeClass = new AndroidJavaClass(NATIVE_CLASS_NAME)) {
+                nativeClass.CallStatic("postMail", string.Join(",", to), string.Join(",", cc), string.Join(",", bcc), subject, message, imagePath);
+            }
 #endif
         }
 
@@ -179,7 +186,9 @@ namespace SWorker
 #if UNITY_IPHONE
             createChooser(message, imagePath);
 #elif UNITY_ANDROID
-            worker.Call("createChooser", message, imagePath);
+            using (var nativeClass = new AndroidJavaClass(NATIVE_CLASS_NAME)) {
+                nativeClass.CallStatic("createChooser", message, imagePath);
+            }
 #endif
         }
 
