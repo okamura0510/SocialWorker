@@ -198,6 +198,17 @@ static const char *kResultError = "2";
 	if ([[UIDevice currentDevice].systemVersion floatValue] > 7.1f) {
         vc.popoverPresentationController.sourceView = UnityGetGLViewController().view;
 	}
+    vc.completionWithItemsHandler = ^(NSString *activityType, BOOL completed, NSArray *returnedItems, NSError *activityError) {
+        if (activityError){ 
+            UnitySendMessage(kUnitySendGameObject, kUnitySendCallback, kResultError);
+        }
+        else if (completed){
+            UnitySendMessage(kUnitySendGameObject, kUnitySendCallback, kResultSuccess);
+        }
+        else{
+            UnitySendMessage(kUnitySendGameObject, kUnitySendCallback, kResultError);
+        }
+    };
     [UnityGetGLViewController() presentViewController:vc animated:YES completion:nil];
 }
 @end
